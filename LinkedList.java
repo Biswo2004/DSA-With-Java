@@ -1,7 +1,7 @@
+//Assignment4
 package A4;
 
 import java.util.Scanner;
-
 class Node {
     protected int regd_no;
     protected float mark;
@@ -240,22 +240,24 @@ public class LinkedList {
 
     public static void main(String[] args) {
         int choice = 0;
-        while (choice != 12) {
+        while (choice != 13) {
             System.out.println("1. Insert at beginning");
             System.out.println("2. Insert at end");
             System.out.println("3. Insert at any position");
             System.out.println("4. Delete from beginning");
             System.out.println("5. Delete from end");
             System.out.println("6. Delete from any position");
-            System.out.println("7. Search and update mark");
-            System.out.println("8. Sort the nodes(according to higher to lower mark)");
-            System.out.println("9. Count number of Nodes");
-            System.out.println("10. Reverse the LinkedList");
-            System.out.println("11. Display list");
-            System.out.println("12. Exit");
+            System.out.println("7. Delete a node based on student registration no");
+            System.out.println("8. Search and update mark");
+            System.out.println("9. Sort the nodes(according to higher to lower mark)");
+            System.out.println("10. Count number of Nodes");
+            System.out.println("11. Reverse the LinkedList");
+            System.out.println("12. Display list");
+            System.out.println("13. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
-            switch (choice) {
+
+             switch (choice) {
                 case 1:
                     start = InsBeg(start);
                     break;
@@ -275,23 +277,26 @@ public class LinkedList {
                     start = DelAny(start);
                     break;
                 case 7:
-                    search(start);
+                    start = DelRegdNo(start);
                     break;
                 case 8:
-                    sort(start);
+                    search(start);
                     break;
                 case 9:
-                    System.out.println("The number of nodes: "+count(start));
+                    sort(start);
                     break;
                 case 10:
+                    System.out.println("The number of nodes: "+count(start));
+                    break;
+                case 11:
                     start = reverse(start);
                     System.out.println("List after reversing:");
                     display(start);
                     break;
-                case 11:
+                case 12:
                     display(start);
                     break;
-                case 12:
+                case 13:
                     System.out.println("Exiting...");
                     System.exit(choice);
                     break;
