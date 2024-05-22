@@ -126,20 +126,15 @@ public class DoublyLinkedList {
 
     // From the end of the list
     public static Node DelEnd(Node start, Node end) {
-        if (start == null) {
-            System.out.println("The list is empty.");
-        } else if (start.next == null) {
-            start = null;
-            end = null;
-        } else {
-            Node temp = start;
-            while (temp.next.next != null) {
-                temp = temp.next;
-            }
-            temp.next = null;
-            end = temp;
-        }
-        return start;
+       if(end==null){
+           System.out.println("List is Empty.");
+           return null;
+       }
+       else if(end.prev!=null){
+               end = end.prev;
+       }
+       end.next = null;
+       return end;
     }
 
     // From any position in the list
@@ -238,7 +233,7 @@ public class DoublyLinkedList {
                     start = DelBeg(start,end);
                     break;
                 case 5:
-                    start = DelEnd(start,end);
+                    end = DelEnd(start,end);
                     break;
                 case 6:
                     start = DelAny(start,end);
