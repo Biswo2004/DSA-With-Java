@@ -33,7 +33,7 @@ public class StackDemo1 {
             return;
         }
         System.out.println("Elements in the stack are:");
-        for (int i = 0; i <= top; i++) {
+        for (int i = top; i >= 0; i--) {
             System.out.println(S[i]);
         }
     }
